@@ -10,7 +10,7 @@ public class Rocket extends Entity {
 
     private String name;
     private String country;
-    private String manufacturer;
+    private LaunchServiceProvider manufacturer;
     private String massToLEO;
     private String massToGTO;
     private String massToOther;
@@ -22,19 +22,19 @@ public class Rocket extends Entity {
      * @param country
      * @param manufacturer
      */
-    public Rocket(String name, String country, String manufacturer) {
+    public Rocket(String name, String country, LaunchServiceProvider manufacturer) {
 
         notBlank(name, "name cannot be null or empty");
         notBlank(country, "country cannot be null or empty");
-        notBlank(manufacturer, "manufacturer cannot be null or empty");
+        //notBlank(manufacturer, "manufacturer cannot be null or empty");
 
-        isTrue(name.trim() == name, "There should be no empty space at the beginning or the end of a name");
-        isTrue(country.trim() == country, "There should be no empty space at the beginning or the end of a country");
-        isTrue(manufacturer.trim() == manufacturer, "There should be no empty space at the beginning or the end of a manufacturer");
+        isTrue(name.equals(name.trim()), "There should be no empty space at the beginning or the end of a name");
+        isTrue(country.equals(country.trim()), "There should be no empty space at the beginning or the end of a country");
+        //isTrue(manufacturer.trim() == manufacturer, "There should be no empty space at the beginning or the end of a manufacturer");
 
         inclusiveBetween(2,40, name.length(), "The length of the name must be equal or greater than 2 and equal or smaller than 40");
         inclusiveBetween(2,40, country.length(), "The length of the country must be equal or greater than 2 and equal or smaller than 40");
-        inclusiveBetween(2,40, manufacturer.length(), "The length of the manufacturer must be equal or greater than 2 and equal or smaller than 40");
+        //inclusiveBetween(2,40, manufacturer.length(), "The length of the manufacturer must be equal or greater than 2 and equal or smaller than 40");
 
         isTrue(!checkNumber(country) && !checkSpecialCharacter(country), "country cannot have numbers or special characters");
 
@@ -53,7 +53,7 @@ public class Rocket extends Entity {
         return country;
     }
 
-    public String getManufacturer() {
+    public LaunchServiceProvider getManufacturer() {
         return manufacturer;
     }
 
@@ -73,7 +73,7 @@ public class Rocket extends Entity {
     public void setMassToLEO(String massToLEO) {
 
         notNull(massToLEO, "massToLEO cannot be null");
-        isTrue(massToLEO.trim() == massToLEO, "There should be no empty space at the beginning or the end of massToLEO");
+        isTrue(massToLEO.equals(massToLEO.trim()), "There should be no empty space at the beginning or the end of massToLEO");
         inclusiveBetween(0,30, massToLEO.length(), "The length of the massToLEO must be equal or greater than 0 and equal or smaller than 30");
 
         this.massToLEO = massToLEO;
@@ -82,7 +82,7 @@ public class Rocket extends Entity {
     public void setMassToGTO(String massToGTO) {
 
         notNull(massToGTO, "massToGTO cannot be null");
-        isTrue(massToGTO.trim() == massToGTO, "There should be no empty space at the beginning or the end of massToGTO");
+        isTrue(massToGTO.equals(massToGTO.trim()), "There should be no empty space at the beginning or the end of massToGTO");
         inclusiveBetween(0,30, massToGTO.length(), "The length of the massToGTO must be equal or greater than 0 and equal or smaller than 30");
 
         this.massToGTO = massToGTO;
@@ -91,7 +91,7 @@ public class Rocket extends Entity {
     public void setMassToOther(String massToOther) {
 
         notNull(massToOther, "massToOther cannot be null");
-        isTrue(massToOther.trim() == massToOther, "There should be no empty space at the beginning or the end of massToOther");
+        isTrue(massToOther.equals(massToOther.trim()), "There should be no empty space at the beginning or the end of massToOther");
         inclusiveBetween(0,30, massToOther.length(), "The length of the massToOther must be equal or greater than 0 and equal or smaller than 30");
 
         this.massToOther = massToOther;
