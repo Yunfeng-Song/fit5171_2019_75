@@ -40,7 +40,7 @@ public class RocketMinerUnitTest {
         lsps = Arrays.asList(
                 new LaunchServiceProvider("ULA", 1990, "USA"),
                 new LaunchServiceProvider("SpaceX", 2002, "USA"),
-                new LaunchServiceProvider("ESA", 1975, "Europe ")
+                new LaunchServiceProvider("ESA", 1975, "Europe")
         );
 
         // index of lsp of each rocket
