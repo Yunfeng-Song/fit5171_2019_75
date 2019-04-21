@@ -23,8 +23,8 @@ public class LaunchServiceProvider extends Entity {
         notBlank(name, "name cannot be null or empty");
         notBlank(country, "country cannot be null or empty");
 
-        isTrue(name.trim() == name, "There should be no empty space at the beginning or the end of a name");
-        isTrue(country.trim() == country, "There should be no empty space at the beginning or the end of a country");
+        isTrue(name.equals(name.trim()), "There should be no empty space at the beginning or the end of a name");
+        isTrue(country.equals(country.trim()), "There should be no empty space at the beginning or the end of a country");
 
         inclusiveBetween(2,40, name.length(), "The length of the name must be equal or greater than 2 and equal or smaller than 40");
         inclusiveBetween(1500, 2019, yearFounded, "yearFounder must be equal or greater than 1500 and equal or smaller than current year");

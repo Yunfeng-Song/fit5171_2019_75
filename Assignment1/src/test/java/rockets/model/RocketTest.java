@@ -134,12 +134,24 @@ class RocketTest {
 
     @DisplayName("should Not throw exception when pass a country which length is between 2 to 40 inclusively to the Rocket's constructor")
     @ParameterizedTest
-    @ValueSource(strings = {"aa", "aaa", "aaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"})
-    public void shouldNotThrowExceptionWhenTheLengthOfTheCountryIsValid(String country){
+    @MethodSource("LaunchServiceProviderObjectProvider")
+    //@ValueSource(strings = {"aa", "aaa", "aaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"})
+    public void shouldNotThrowExceptionWhenTheLengthOfTheCountryIsValid(String country, LaunchServiceProvider manufacture){
 
         assertDoesNotThrow(()-> {
-            new Rocket("HeHe X", country, target.getManufacturer());
+            new Rocket("HeHe X", country, manufacture);
         });
+    }
+
+    private static Stream<Arguments> LaunchServiceProviderObjectProvider() {
+
+        LaunchServiceProvider l1 = new LaunchServiceProvider("hehe", 1949, "aa");
+        LaunchServiceProvider l2 = new LaunchServiceProvider("hehe", 1949, "aaa");
+        LaunchServiceProvider l3 = new LaunchServiceProvider("hehe", 1949, "aaaaaaaaaaaaaaaaaaaa");
+        LaunchServiceProvider l4 = new LaunchServiceProvider("hehe", 1949, "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+        LaunchServiceProvider l5 = new LaunchServiceProvider("hehe", 1949, "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+
+        return Stream.of(Arguments.of("aa", l1), Arguments.of("aaa", l2), Arguments.of("aaaaaaaaaaaaaaaaaaaa", l3), Arguments.of("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", l4), Arguments.of("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", l5));
     }
 
 //    @DisplayName("should throw exception when pass a manufacturer which length is not between 2 to 40 inclusively to the Rocket's constructor")
@@ -182,8 +194,26 @@ class RocketTest {
     public void shouldNotThrowExceptionWhenTheCountryDoesNotHasNumbersOrSpecialCharacters(){
 
         assertDoesNotThrow(()-> {
-            new Rocket("HeHe X", "Australia", target.getManufacturer());
+            new Rocket("HeHe X", "China", target.getManufacturer());
         });
+    }
+
+    @DisplayName("should throw exception when pass a country which is not the same as the country of the manufacture")
+    @Test
+    public void shouldThrowExceptionWhenTwoCountriesAreNotTheSame(){
+
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> new Rocket("HeHe X", "Australia", target.getManufacturer()));
+        assertEquals("The country of this rocket and the country of the manufacturer must be the same", exception.getMessage());
+    }
+
+    @DisplayName("should not throw exception when pass a country which is not the same as the country of the manufacture")
+    @Test
+    public void shouldNotThrowExceptionWhenTwoCountriesAreNotTheSame(){
+
+        assertDoesNotThrow(() -> {
+            new Rocket("HeHe X", "China", target.getManufacturer());
+    });
+
     }
 
 
@@ -343,14 +373,14 @@ class RocketTest {
 
         LaunchServiceProvider l = new LaunchServiceProvider("hehehe", 1949, "China");
         Rocket r1 = new Rocket("HeHe XX", "China", l);
-        Rocket r2 = new Rocket("HeHe X", "Australia", l);
+        //Rocket r2 = new Rocket("HeHe X", "Australia", l);
         Rocket r3 = new Rocket("HeHe X", "China", l);
-        Rocket r4 = new Rocket("HeHe X", "Australia", l);
+        //Rocket r4 = new Rocket("HeHe X", "Australia", l);
         Rocket r5 = new Rocket("HeHe XX", "China", l);
-        Rocket r6 = new Rocket("HeHe XX", "Australia", l);
-        Rocket r7 = new Rocket("HeHe XX", "Australia", l);
+        //Rocket r6 = new Rocket("HeHe XX", "Australia", l);
+        //Rocket r7 = new Rocket("HeHe XX", "Australia", l);
 
-        return Stream.of(Arguments.of(r1), Arguments.of(r2), Arguments.of(r3), Arguments.of(r4), Arguments.of(r5), Arguments.of(r6), Arguments.of(r7));
+        return Stream.of(Arguments.of(r1), Arguments.of(r3), Arguments.of(r5));
     }
 
     @DisplayName("should return true when pass a rocket with the same name, country and manufacturer to the equals function")
