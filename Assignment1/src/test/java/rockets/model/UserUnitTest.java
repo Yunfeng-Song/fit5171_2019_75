@@ -295,7 +295,8 @@ public class UserUnitTest {
 
     private static Stream<Arguments> InvalidObjectProvider() {
 
-        Rocket r = new Rocket("hehe X", "China", "hehe");
+        LaunchServiceProvider l = new LaunchServiceProvider("hehe X", 1949, "China");
+        Rocket r = new Rocket("hehe X", "China", l);
 
         return Stream.of(Arguments.of(r));
     }

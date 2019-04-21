@@ -26,6 +26,7 @@ public class Rocket extends Entity {
 
         notBlank(name, "name cannot be null or empty");
         notBlank(country, "country cannot be null or empty");
+        notNull(manufacturer, "manufacturer cannot be null");
         //notBlank(manufacturer, "manufacturer cannot be null or empty");
 
         isTrue(name.equals(name.trim()), "There should be no empty space at the beginning or the end of a name");

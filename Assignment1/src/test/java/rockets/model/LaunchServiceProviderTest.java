@@ -305,8 +305,9 @@ class LaunchServiceProviderTest {
 
     private static Stream<Arguments> InvalidCountryRocketSetProvider() {
 
-        Rocket r1 = new Rocket("Xcode", "Australia", "HeHe");
-        Rocket r2 = new Rocket("Xcode", "China", "HeHe");
+        LaunchServiceProvider l = new LaunchServiceProvider("hehe X", 1949, "China");
+        Rocket r1 = new Rocket("Xcode", "Australia", l);
+        Rocket r2 = new Rocket("Xcode", "China", l);
         Set<Rocket> r = Sets.newLinkedHashSet();
         r.add(r1);
         r.add(r2);
@@ -327,8 +328,9 @@ class LaunchServiceProviderTest {
 
     private static Stream<Arguments> ValidCountryRocketSetProvider() {
 
-        Rocket r2 = new Rocket("Xcode", "China", "HeHe");
-        Rocket r3 = new Rocket("Apple", "China", "HeHe");
+        LaunchServiceProvider l = new LaunchServiceProvider("hehe X", 1949, "China");
+        Rocket r2 = new Rocket("Xcode", "China", l);
+        Rocket r3 = new Rocket("Apple", "China", l);
         Set<Rocket> r = Sets.newLinkedHashSet();
         r.add(r2);
         Set<Rocket> rr = Sets.newLinkedHashSet();
