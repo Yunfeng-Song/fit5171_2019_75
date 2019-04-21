@@ -45,7 +45,7 @@ class RocketTest {
     public void shouldThrowExceptionWhenSetManufacturerToNull(){
 
         NullPointerException exception = assertThrows(NullPointerException.class, () -> new Rocket("HeHe X", "China", null));
-        assertEquals("manufacturer cannot be null or empty", exception.getMessage());
+        assertEquals("manufacturer cannot be null", exception.getMessage());
     }
 
     @DisplayName("should throw exception when pass an empty string as name to the Rocket's constructor")
@@ -339,15 +339,16 @@ class RocketTest {
         assertFalse(target.equals(o));
     }
 
-    private Stream<Arguments> DifferentObjectProvider() {
+    private static Stream<Arguments> DifferentObjectProvider() {
 
-        Rocket r1 = new Rocket("HeHe XX", "China", target.getManufacturer());
-        Rocket r2 = new Rocket("HeHe X", "Australia", target.getManufacturer());
-        Rocket r3 = new Rocket("HeHe X", "China", target.getManufacturer());
-        Rocket r4 = new Rocket("HeHe X", "Australia", target.getManufacturer());
-        Rocket r5 = new Rocket("HeHe XX", "China", target.getManufacturer());
-        Rocket r6 = new Rocket("HeHe XX", "Australia", target.getManufacturer());
-        Rocket r7 = new Rocket("HeHe XX", "Australia", target.getManufacturer());
+        LaunchServiceProvider l = new LaunchServiceProvider("hehehe", 1949, "China");
+        Rocket r1 = new Rocket("HeHe XX", "China", l);
+        Rocket r2 = new Rocket("HeHe X", "Australia", l);
+        Rocket r3 = new Rocket("HeHe X", "China", l);
+        Rocket r4 = new Rocket("HeHe X", "Australia", l);
+        Rocket r5 = new Rocket("HeHe XX", "China", l);
+        Rocket r6 = new Rocket("HeHe XX", "Australia", l);
+        Rocket r7 = new Rocket("HeHe XX", "Australia", l);
 
         return Stream.of(Arguments.of(r1), Arguments.of(r2), Arguments.of(r3), Arguments.of(r4), Arguments.of(r5), Arguments.of(r6), Arguments.of(r7));
     }
@@ -360,9 +361,10 @@ class RocketTest {
         assertTrue(target.equals(o));
     }
 
-    private Stream<Arguments> SameObjectProvider() {
+    private static Stream<Arguments> SameObjectProvider() {
 
-        Rocket r1 = new Rocket("HeHe X", "China", target.getManufacturer());
+        LaunchServiceProvider l = new LaunchServiceProvider("hehe", 1949, "China");
+        Rocket r1 = new Rocket("HeHe X", "China", l);
 
 
         return Stream.of(Arguments.of(r1));
