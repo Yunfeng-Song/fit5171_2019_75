@@ -38,7 +38,7 @@ public class Rocket extends Entity {
         //inclusiveBetween(2,40, manufacturer.length(), "The length of the manufacturer must be equal or greater than 2 and equal or smaller than 40");
 
         isTrue(!checkNumber(country) && !checkSpecialCharacter(country), "country cannot have numbers or special characters");
-        isTrue(country.equals(manufacturer.getCountry()), "The country of this rocket and the country of the manufacturer must be the same");
+        //isTrue(country.equals(manufacturer.getCountry()), "The country of this rocket and the country of the manufacturer must be the same");
 
         this.name = name;
         this.country = country;

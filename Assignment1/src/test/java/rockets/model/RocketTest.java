@@ -198,23 +198,23 @@ class RocketTest {
         });
     }
 
-    @DisplayName("should throw exception when pass a country which is not the same as the country of the manufacture")
-    @Test
-    public void shouldThrowExceptionWhenTwoCountriesAreNotTheSame(){
-
-        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> new Rocket("HeHe X", "Australia", target.getManufacturer()));
-        assertEquals("The country of this rocket and the country of the manufacturer must be the same", exception.getMessage());
-    }
-
-    @DisplayName("should not throw exception when pass a country which is not the same as the country of the manufacture")
-    @Test
-    public void shouldNotThrowExceptionWhenTwoCountriesAreNotTheSame(){
-
-        assertDoesNotThrow(() -> {
-            new Rocket("HeHe X", "China", target.getManufacturer());
-    });
-
-    }
+//    @DisplayName("should throw exception when pass a country which is not the same as the country of the manufacture")
+//    @Test
+//    public void shouldThrowExceptionWhenTwoCountriesAreNotTheSame(){
+//
+//        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> new Rocket("HeHe X", "Australia", target.getManufacturer()));
+//        assertEquals("The country of this rocket and the country of the manufacturer must be the same", exception.getMessage());
+//    }
+//
+//    @DisplayName("should not throw exception when pass a country which is not the same as the country of the manufacture")
+//    @Test
+//    public void shouldNotThrowExceptionWhenTwoCountriesAreNotTheSame(){
+//
+//        assertDoesNotThrow(() -> {
+//            new Rocket("HeHe X", "China", target.getManufacturer());
+//    });
+//
+//    }
 
 
     //massToLEO validation.
