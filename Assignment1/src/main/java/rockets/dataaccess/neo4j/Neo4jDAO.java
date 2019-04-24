@@ -1,6 +1,7 @@
 package rockets.dataaccess.neo4j;
 
 import com.google.common.collect.Sets;
+import org.mockito.internal.matchers.NotNull;
 import org.neo4j.ogm.cypher.Filter;
 import org.neo4j.ogm.cypher.Filters;
 import org.neo4j.ogm.session.Session;
@@ -14,24 +15,29 @@ import rockets.model.User;
 
 import java.util.Collection;
 
+import static org.apache.commons.lang3.Validate.isTrue;
+import static org.apache.commons.lang3.Validate.notNull;
 import static org.neo4j.ogm.cypher.ComparisonOperator.EQUALS;
 
 public class Neo4jDAO implements DAO {
-    private static final int DEPTH_ENTITY = 1;
 
+    private static final int DEPTH_ENTITY = 1;
     private Session session;
 
     public Neo4jDAO(Session session) {
+
         this.session = session;
     }
 
     @Override
     public <T extends Entity> T load(Class<T> clazz, Long id) {
+
         return session.load(clazz, id, DEPTH_ENTITY);
     }
 
     @Override
     public <T extends Entity> T createOrUpdate(T entity) {
+
         Class clazz = entity.getClass();
 
         T existingEntity = findExistingEntity(entity, clazz);
@@ -45,6 +51,7 @@ public class Neo4jDAO implements DAO {
     }
 
     private <T extends Entity> T findExistingEntity(Entity entity, Class clazz) {
+
         Entity existingEntity = null;
         Filters filters = new Filters();
         Collection<? extends Entity> collection = Sets.newLinkedHashSet();
@@ -79,11 +86,18 @@ public class Neo4jDAO implements DAO {
 
     @Override
     public <T extends Entity> Collection<T> loadAll(Class<T> clazz) {
+
         return session.loadAll(clazz);
     }
 
     // TODO: need to be tested!
     public <T extends Entity> void delete(T entity) {
+
+        notNull(entity, "entity cannot be null.");
+        isTrue(null != findExistingEntity(entity, entity.getClass()), "Cannot find the entity.");
+
+        Transaction tx = session.beginTransaction();
         session.delete(entity);
+        tx.commit();
     }
 }

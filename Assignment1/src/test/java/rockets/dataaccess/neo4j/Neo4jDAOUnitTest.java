@@ -2,6 +2,10 @@ package rockets.dataaccess.neo4j;
 
 import com.google.common.collect.Sets;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.harness.ServerControls;
 import org.neo4j.harness.TestServerBuilders;
@@ -17,6 +21,7 @@ import rockets.model.User;
 import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Set;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -165,6 +170,45 @@ public class Neo4jDAOUnitTest {
         dao.delete(rocket);
         assertTrue(dao.loadAll(Rocket.class).isEmpty());
         assertFalse(dao.loadAll(LaunchServiceProvider.class).isEmpty());
+    }
+
+    //delete function validation.
+    @DisplayName("should throw exception when pass a null to delete function")
+    @Test
+    public void shouldThrowExceptionWhenDeleteANullEntity(){
+
+        NullPointerException exception = assertThrows(NullPointerException.class, () -> dao.delete(null));
+        assertEquals("entity cannot be null.", exception.getMessage());
+    }
+
+    @DisplayName("should throw exception when the entity cannot be found")
+    @Test
+    public void shouldThrowExceptionWhenTheEntityCannotBeFound() {
+        User entity = new User();
+        entity.setFirstName("test");
+        entity.setLastName("test");
+        entity.setEmail("test@test.com");
+        entity.setPassword("TESTtest1");
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> dao.delete(entity));
+        assertEquals("Cannot find the entity.", exception.getMessage());
+    }
+
+    @DisplayName("should not throw exception when the entity can be found")
+    @Test
+    public void shouldNotThrowExceptionWhenTheEntityCanBeFound() {
+        User entity = new User();
+        entity.setFirstName("test");
+        entity.setLastName("test");
+        entity.setEmail("test@test.com");
+        entity.setPassword("TESTtest1");
+        dao.createOrUpdate(entity);
+
+        assertNotNull(entity.getId());
+        assertFalse(dao.loadAll(User.class).isEmpty());
+        assertDoesNotThrow(() -> {
+                dao.delete(entity);
+        });
+        assertTrue(dao.loadAll(User.class).isEmpty());
     }
 
     @AfterEach
