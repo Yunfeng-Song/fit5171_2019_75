@@ -5,20 +5,27 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.*;
+import rockets.dataaccess.neo4j.Neo4jDAO;
 
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.times;
 
 class RocketTest {
 
     private Rocket target;
+    private Rocket mockTarget;
+    private LaunchServiceProvider lsp;
 
     @BeforeEach
     public void setUp() {
 
+        lsp = mock(LaunchServiceProvider.class);
         LaunchServiceProvider l = new LaunchServiceProvider("hehe", 1949, "China");
         target = new Rocket("HeHe X", "China", l);
+        mockTarget = new Rocket("HeHe x", "China", lsp);
     }
 
 
@@ -399,5 +406,56 @@ class RocketTest {
 
         return Stream.of(Arguments.of(r1));
     }
+
+
+    //getManufacturer validation
+    @DisplayName("should be the same when test the getManufacturer function")
+    @Test
+    public void shouldBeTheSameWhenTestThegetManufacturerFunction(){
+
+        assertEquals(lsp, mockTarget.getManufacturer());
+
+    }
+
+    //hashcode validation
+    @DisplayName("should not throw exception when test the hashcode function")
+    @Test
+    public void shouldNotThrowExceptionWhenTestThehashcodeFunction(){
+
+        assertDoesNotThrow(()-> {
+            mockTarget.hashCode();
+        });
+
+    }
+
+    //toString validation
+    @DisplayName("should not throw exception when test the toString function")
+    @Test
+    public void shouldNotThrowExceptionWhenTestThetoStringFunction(){
+
+        when(lsp.getName()).thenReturn("HeHe");
+
+        assertDoesNotThrow(()-> {
+            String a = mockTarget.toString();
+        });
+        verify(lsp,times(1)).getName();
+        assertTrue(mockTarget.toString().contains("HeHe"));
+
+    }
+
+    //equals validation
+    @DisplayName("should not throw exception when test the equals function")
+    @Test
+    public void shouldNotThrowExceptionWhenTestTheequalsFunction(){
+
+        assertTrue(mockTarget.equals(mockTarget));
+
+    }
+
+
+
+
+
+
 
 }

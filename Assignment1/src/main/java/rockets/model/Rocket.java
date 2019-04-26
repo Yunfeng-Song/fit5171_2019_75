@@ -55,6 +55,7 @@ public class Rocket extends Entity {
     }
 
     public LaunchServiceProvider getManufacturer() {
+
         return manufacturer;
     }
 
@@ -122,7 +123,7 @@ public class Rocket extends Entity {
         return "Rocket{" +
                 "name='" + name + '\'' +
                 ", country='" + country + '\'' +
-                ", manufacturer='" + manufacturer + '\'' +
+                ", manufacturer='" + manufacturer.getName() + '\'' +
                 ", massToLEO='" + massToLEO + '\'' +
                 ", massToGTO='" + massToGTO + '\'' +
                 ", massToOther='" + massToOther + '\'' +

@@ -90,6 +90,7 @@ public class Launch extends Entity {
     }
 
     public LaunchOutcome getLaunchOutcome() {
+
         return launchOutcome;
     }
 

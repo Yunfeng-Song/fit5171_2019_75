@@ -1,0 +1,43 @@
+
+qsquid:S1192#"ZDefine a constant instead of duplicating this literal "k must be greater than 0." 5 times.(¨ø»µ
+Ssquid:S2629%"7Use the built-in formatting to construct this argument.(‹¦Ë¾ûÿÿÿÿ
+bsquid:S1155â">Use isEmpty() to check whether the collection is empty or not.(¡ Íıÿÿÿÿ8è«éÑ¤-
+Usquid:S2629Z"7Use the built-in formatting to construct this argument.(Şì¥÷8Ü·„Ñ¤-
+Csquid:S2676ˆ"Use the original value instead.(ßØ«¿üÿÿÿÿ8è«éÑ¤-
+esquid:S3457¢"AFormat specifiers should be used instead of string concatenation.( ¡ë‚øÿÿÿÿ8è«éÑ¤-
+qsquid:S3776œ"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(“ƒÉ¡8–İÁÔ¤-
+bsquid:S1155¦">Use isEmpty() to check whether the collection is empty or not.(”¶µÚùÿÿÿÿ8–İÁÔ¤-
+_squid:S3457Z"AFormat specifiers should be used instead of string concatenation.(Şì¥÷8Ü·„Ñ¤-
+Isquid:S1135"2Complete the task associated to this TODO comment.(ò´å¹
+Isquid:S1168*"+Return an empty collection instead of null.(¥¹ï8ğÓÓ¤-
+Jsquid:S1168¹"+Return an empty collection instead of null.(¥¹ï8ğÕÏÓ¤-
+`squid:S3457´"AFormat specifiers should be used instead of string concatenation.(ÙÆ¤8è«éÑ¤-
+Qsquid:S1135ê"2Complete the task associated to this TODO comment.(ò´å¹8è«éÑ¤-
+Psquid:S1135N"2Complete the task associated to this TODO comment.(ò´å¹8Ü·„Ñ¤-
+Isquid:S1168_"+Return an empty collection instead of null.(¥¹ï8’ØÓ¤-
+asquid:S11555">Use isEmpty() to check whether the collection is empty or not.(¯‹¶Ïıÿÿÿÿ8‰¥„Ñ¤-
+Jsquid:S1168…"+Return an empty collection instead of null.(¥¹ï8¿®Ô¤-
+Jsquid:S1168Æ"+Return an empty collection instead of null.(¥¹ï8¼­ÇÔ¤-
+]squid:S1155±">Use isEmpty() to check whether the collection is empty or not.(µ´×8è«éÑ¤-
+psquid:S2293'"YReplace the type specification in this constructor call with the diamond operator ("<>").(‡¢øƒ
+>squid:S2676¶"Use the original value instead.(ƒñƒ„8è«éÑ¤-
+psquid:S3776V"RRefactor this method to reduce its Cognitive Complexity from 30 to the 15 allowed.(ù™èõ8Ü·„Ñ¤-
+Jsquid:S1168²"+Return an empty collection instead of null.(¥¹ï8è«éÑ¤-
+Jsquid:S1168ú"+Return an empty collection instead of null.(¥¹ï8Ì¬Ô¤-
+`squid:S3457õ"AFormat specifiers should be used instead of string concatenation.(ôöÉ8è«éÑ¤-
+Vsquid:S2629´"7Use the built-in formatting to construct this argument.(ÙÆ¤8è«éÑ¤-
+Usquid:S2629Î"7Use the built-in formatting to construct this argument.(äÂ&8è«éÑ¤-
+asquid:S1155)">Use isEmpty() to check whether the collection is empty or not.(”¶µÚùÿÿÿÿ8ğÓÓ¤-
+Isquid:S11686"+Return an empty collection instead of null.(¥¹ï8Ü·„Ñ¤-
+Jsquid:S1168§"+Return an empty collection instead of null.(¥¹ï8–İÁÔ¤-
+_squid:S3457Î"AFormat specifiers should be used instead of string concatenation.(äÂ&8è«éÑ¤-
+Isquid:S1168t"+Return an empty collection instead of null.(¥¹ï8ò—ÚÓ¤-
+Qsquid:S1135“"2Complete the task associated to this TODO comment.(ò´å¹8è«éÑ¤-
+asquid:S1155^">Use isEmpty() to check whether the collection is empty or not.(”¶µÚùÿÿÿÿ8’ØÓ¤-
+bsquid:S1155Ó">Use isEmpty() to check whether the collection is empty or not.(”¶µÚùÿÿÿÿ8Èü¢Ô¤-
+bsquid:S1155ù">Use isEmpty() to check whether the collection is empty or not.(”¶µÚùÿÿÿÿ8Ì¬Ô¤-
+Qsquid:S1135À"2Complete the task associated to this TODO comment.(ò´å¹8è«éÑ¤-
+]squid:S1155„">Use isEmpty() to check whether the collection is empty or not.(µ´×8¿®Ô¤-
+]squid:S3457%"AFormat specifiers should be used instead of string concatenation.(‹¦Ë¾ûÿÿÿÿ
+Vsquid:S2629õ"7Use the built-in formatting to construct this argument.(ôöÉ8è«éÑ¤-
+[squid:S2629¢"7Use the built-in formatting to construct this argument.( ¡ë‚øÿÿÿÿ8è«éÑ¤-

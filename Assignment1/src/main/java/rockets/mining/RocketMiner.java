@@ -194,7 +194,7 @@ public class RocketMiner {
      * Returns the dominant country who has the most launched rockets in an orbit.
      *
      * @param orbit the orbit
-     * @return the country who sends the most payload to the orbit
+     * @return the country who sends the most payload to the orbit 
      */
     public String dominantCountry(String orbit) {
 

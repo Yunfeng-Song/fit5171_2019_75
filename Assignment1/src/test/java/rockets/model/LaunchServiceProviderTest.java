@@ -15,14 +15,24 @@ import java.util.Set;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 class LaunchServiceProviderTest {
 
     private LaunchServiceProvider target;
+    private LaunchServiceProvider mockTarget;
+    private Set<Rocket> rockets;
 
     @BeforeEach
     public void setUp() {
 
+        Rocket rocket = mock(Rocket.class);
+        rockets = Sets.newLinkedHashSet();
+        rockets.add(rocket);
+        mockTarget = new LaunchServiceProvider("HeHe X", 1949, "China");
+        when(rocket.getCountry()).thenReturn("China");
+        mockTarget.setRockets(rockets);
         target = new LaunchServiceProvider("HeHe X", 1949, "China");
     }
 
@@ -408,6 +418,15 @@ class LaunchServiceProviderTest {
         LaunchServiceProvider l1 = new LaunchServiceProvider("HeHe X", 1949, "China");
 
         return Stream.of(Arguments.of(l1));
+    }
+
+    //getRockets validaton
+    @DisplayName("should be the same when test the getRockets function")
+    @Test
+    public void shouldBeTheSameWhenTestThegetRocketsFunction(){
+
+        assertEquals(rockets, mockTarget.getRockets());
+
     }
 
 }

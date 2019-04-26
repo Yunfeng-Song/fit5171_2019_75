@@ -96,8 +96,8 @@ public class Neo4jDAO implements DAO {
         notNull(entity, "entity cannot be null.");
         isTrue(null != findExistingEntity(entity, entity.getClass()), "Cannot find the entity.");
 
-        Transaction tx = session.beginTransaction();
+        //Transaction tx = session.beginTransaction();
         session.delete(entity);
-        tx.commit();
+        //tx.commit();
     }
 }

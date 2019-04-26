@@ -287,6 +287,7 @@ public class RocketMinerUnitTest {
     @ParameterizedTest
     @ValueSource(ints = {1, 2, 3, 20})
     public void shouldReturnTopMostRecentLaunches(int k) {
+
         when(dao.loadAll(Launch.class)).thenReturn(launches);
 
         List<Launch> sortedLaunches = new ArrayList<>(launches);
