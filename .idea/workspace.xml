@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ad6d45e-427a-48fb-9663-2275de9ce958" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="5ad6d45e-427a-48fb-9663-2275de9ce958" name="Default Changelist" comment="finish unit testing">
       <change beforePath="$PROJECT_DIR$/Assignment1/src/main/java/rockets/dataaccess/neo4j/Neo4jDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/src/main/java/rockets/dataaccess/neo4j/Neo4jDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assignment1/src/main/java/rockets/mining/RocketMiner.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/src/main/java/rockets/mining/RocketMiner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assignment1/src/main/java/rockets/model/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/src/main/java/rockets/model/Entity.java" afterDir="false" />
@@ -65,9 +64,21 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assignment1/src/main/java/rockets/model/Entity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assignment1/src/test/java/rockets/model/LaunchTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
+            <state relative-caret-position="290">
               <caret line="43" column="25" lean-forward="true" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -117,15 +128,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assignment1/src/test/java/rockets/dataaccess/neo4j/Neo4jDAOUnitTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1680">
-              <caret line="263" selection-start-line="263" selection-end-line="263" />
             </state>
           </provider>
         </entry>
@@ -523,11 +525,11 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.Neo4jDAOUnitTest" />
-      <item itemvalue="Maven.Test-1" />
       <item itemvalue="JUnit.Neo4jDAOUnitTest.shouldNotThrowExceptionWhenTheLaunchEntityCanBeFound" />
       <item itemvalue="JUnit.RocketTest" />
       <item itemvalue="JUnit.LaunchServiceProviderTest" />
       <item itemvalue="JUnit.LaunchTest" />
+      <item itemvalue="Maven.Test-1" />
     </list>
     <recent_temporary>
       <list>
@@ -617,7 +619,7 @@
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25040388" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25040388" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -724,16 +726,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2355">
           <caret line="157" column="56" selection-start-line="157" selection-start-column="56" selection-end-line="157" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assignment1/src/main/java/rockets/model/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -851,8 +843,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assignment1/src/test/java/rockets/model/LaunchTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
+        <state relative-caret-position="290">
           <caret line="43" column="25" lean-forward="true" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment1/src/main/java/rockets/model/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
