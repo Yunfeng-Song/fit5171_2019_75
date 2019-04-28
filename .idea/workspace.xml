@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ad6d45e-427a-48fb-9663-2275de9ce958" name="Default Changelist" comment="finish unit testing">
+    <list default="true" id="5ad6d45e-427a-48fb-9663-2275de9ce958" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment1/src/main/java/rockets/mining/RocketMiner.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/src/main/java/rockets/mining/RocketMiner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment1/src/main/java/rockets/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/src/main/java/rockets/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment1/src/test/java/rockets/mining/RocketMinerUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/src/test/java/rockets/mining/RocketMinerUnitTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assignment1/src/test/java/rockets/model/UserUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/src/test/java/rockets/model/UserUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment1/target/classes/rockets/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/target/classes/rockets/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment1/target/test-classes/rockets/model/UserUnitTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment1/target/test-classes/rockets/model/UserUnitTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/Assignment1/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assignment1/src/test/java/rockets/model/UserUnitTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="325" column="36" selection-start-line="325" selection-start-column="36" selection-end-line="325" selection-end-column="36" />
+            <state relative-caret-position="316">
+              <caret line="350" column="68" selection-start-line="350" selection-start-column="68" selection-end-line="350" selection-end-column="68" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -61,7 +60,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assignment1/src/main/java/rockets/model/Entity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
+            <state relative-caret-position="181">
               <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -97,8 +96,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assignment1/src/main/java/rockets/model/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="194" column="3" selection-start-line="194" selection-start-column="3" selection-end-line="198" selection-end-column="5" />
+            <state relative-caret-position="206">
+              <caret line="80" column="2" selection-start-line="80" selection-start-column="2" selection-end-line="83" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -115,7 +114,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assignment1/src/test/java/rockets/mining/RocketMinerUnitTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="241">
@@ -172,8 +171,8 @@
         <option value="$PROJECT_DIR$/Assignment1/src/test/java/rockets/model/LaunchTest.java" />
         <option value="$PROJECT_DIR$/Assignment1/src/main/java/rockets/model/User.java" />
         <option value="$PROJECT_DIR$/Assignment1/src/main/java/rockets/mining/RocketMiner.java" />
-        <option value="$PROJECT_DIR$/Assignment1/src/test/java/rockets/model/UserUnitTest.java" />
         <option value="$PROJECT_DIR$/Assignment1/src/test/java/rockets/mining/RocketMinerUnitTest.java" />
+        <option value="$PROJECT_DIR$/Assignment1/src/test/java/rockets/model/UserUnitTest.java" />
       </list>
     </option>
   </component>
@@ -200,7 +199,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="x" value="20" />
     <option name="y" value="23" />
     <option name="width" value="1260" />
@@ -350,7 +349,7 @@
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556453432132" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556458511611" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -375,7 +374,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.RocketMinerUnitTest">
+  <component name="RunManager" selected="JUnit.UserUnitTest">
     <configuration name="LaunchServiceProviderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fit5171_2019_75" />
       <extension name="coverage">
@@ -506,8 +505,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RocketMinerUnitTest" />
         <item itemvalue="JUnit.UserUnitTest" />
+        <item itemvalue="JUnit.RocketMinerUnitTest" />
         <item itemvalue="JUnit.LaunchTest" />
         <item itemvalue="JUnit.LaunchServiceProviderTest" />
         <item itemvalue="JUnit.RocketTest" />
@@ -524,7 +523,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1554013269731</updated>
-      <workItem from="1556283820327" duration="15307000" />
+      <workItem from="1556283820327" duration="16392000" />
     </task>
     <task id="LOCAL-00001" summary="change pom file">
       <created>1555649797550</created>
@@ -554,16 +553,17 @@
       <option name="project" value="LOCAL" />
       <updated>1556080259433</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Extra Marks">
+      <created>1556457224280</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1556457224280</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="LaunchServiceProviderTest - 2019.04.26 at 19h 22m 33s.xml">
-      <configuration name="LaunchServiceProviderTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LaunchServiceProviderTest - 2019.04.26 at 19h 22m 52s.xml">
-      <configuration name="LaunchServiceProviderTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="LaunchServiceProviderTest - 2019.04.26 at 19h 23m 01s.xml">
       <configuration name="LaunchServiceProviderTest" configurationId="JUnit" />
     </history-entry>
@@ -588,12 +588,18 @@
     <history-entry file="RocketMinerUnitTest - 2019.04.28 at 22h 05m 59s.xml">
       <configuration name="RocketMinerUnitTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="RocketMinerUnitTest - 2019.04.28 at 23h 28m 54s.xml">
+      <configuration name="RocketMinerUnitTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserUnitTest - 2019.04.28 at 23h 29m 42s.xml">
+      <configuration name="UserUnitTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15307000" />
+    <option name="totallyTimeSpent" value="16392000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2539342" />
@@ -604,33 +610,33 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Learn" order="6" weight="0.32956383" />
       <window_info id="Favorites" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Java Enterprise" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49919224" visible="true" weight="0.32771084" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32876712" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32876712" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50080776" side_tool="true" weight="0.32876712" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32876712" />
-      <window_info anchor="bottom" id="Graph Database Console" order="11" />
-      <window_info anchor="bottom" id="SonarLint" order="12" weight="0.32876712" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" weight="0.15307583" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Graph Database" order="8" weight="0.32956383" />
-      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.32956383" />
+      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="1" />
+      <window_info anchor="bottom" id="Message" order="2" />
+      <window_info anchor="bottom" id="Java Enterprise" order="3" />
+      <window_info anchor="bottom" id="Find" order="4" />
+      <window_info active="true" anchor="bottom" id="Run" order="5" sideWeight="0.49919224" visible="true" weight="0.32771084" />
+      <window_info anchor="bottom" id="Debug" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32876712" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32876712" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50080776" side_tool="true" weight="0.32876712" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32876712" />
+      <window_info anchor="bottom" id="Graph Database Console" order="14" />
+      <window_info anchor="bottom" id="SonarLint" order="15" weight="0.32876712" />
+      <window_info anchor="right" id="Database" order="0" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Maven" order="5" weight="0.15307583" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Graph Database" order="9" weight="0.32956383" />
+      <window_info anchor="right" id="Coverage" order="10" side_tool="true" weight="0.32956383" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -680,7 +686,8 @@
     <MESSAGE value="change pom file" />
     <MESSAGE value="change workspace file" />
     <MESSAGE value="finish unit testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish unit testing" />
+    <MESSAGE value="Extra Marks" />
+    <option name="LAST_COMMIT_MESSAGE" value="Extra Marks" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Assignment1/rockets.iml" />
@@ -766,16 +773,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assignment1/src/main/java/rockets/model/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assignment1/src/main/java/rockets/model/Rocket.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1515">
@@ -803,16 +800,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assignment1/src/test/java/rockets/model/UserUnitTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="325" column="36" selection-start-line="325" selection-start-column="36" selection-end-line="325" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assignment1/src/main/java/rockets/model/LaunchServiceProvider.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="990">
@@ -820,13 +807,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assignment1/src/main/java/rockets/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="194" column="3" selection-start-line="194" selection-start-column="3" selection-end-line="198" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -844,6 +824,40 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="241">
           <caret line="712" column="59" lean-forward="true" selection-start-line="712" selection-end-line="713" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment1/src/main/java/rockets/model/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17593">
+          <caret line="1248" selection-start-line="1248" selection-end-line="1248" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment1/src/main/java/rockets/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="80" column="2" selection-start-line="80" selection-start-column="2" selection-end-line="83" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment1/src/test/java/rockets/model/UserUnitTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="350" column="68" selection-start-line="350" selection-start-column="68" selection-end-line="350" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

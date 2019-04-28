@@ -336,4 +336,22 @@ public class UserUnitTest {
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> target.changePassword("123qweQWE","123qweQWE"));
         assertEquals("new password shouldn't be the same as old password", exception.getMessage());
     }
+
+    @DisplayName("should be successful when user enters correct old password and proper new password")
+    @Test
+    public void shouldSucceedWhenUserEntersCorrectOldPasswordAndProperNewPassword(){
+        target.setPassword("123qweQWE");
+        target.changePassword("123qweQWE","321ewqEWQ");
+        assertEquals(target.getPassword(), "321ewqEWQ" );
+    }
+
+    @DisplayName("should return true when the user enters the password that matches")
+    @ParameterizedTest
+    @ValueSource(strings = {"123qweQWE", " 123qweQWE", "123qweQWE", " 123qweQWE "})
+    public void shouldReturnTrueWhenUserEntersThePasswordThatMathces(String password){
+        target.setPassword("123qweQWE");
+        assertTrue(target.isPasswordMatch(password));
+    }
+
+
 }
