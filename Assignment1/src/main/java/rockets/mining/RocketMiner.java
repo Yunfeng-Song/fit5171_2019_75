@@ -8,6 +8,7 @@ import rockets.model.LaunchServiceProvider;
 import rockets.model.Rocket;
 
 import java.math.BigDecimal;
+import java.security.Provider;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -352,5 +353,67 @@ public class RocketMiner {
         }
 
         return lspList.stream().sorted(lspRevenueComparator).limit(k).collect(Collectors.toList());
+    }
+
+    public List<LaunchServiceProvider> providersWithLongestHistory(int k) {
+        isTrue(k > 0, "k must be greater than 0");
+        Collection<LaunchServiceProvider> providers = dao.loadAll(LaunchServiceProvider.class);
+        List<LaunchServiceProvider> providerList = new ArrayList<>();
+
+        if (providers.size() == 0) {
+            return null;
+        }
+
+        for (LaunchServiceProvider provider : providers) {
+
+            if (provider.getYearFounded() != 0) {
+                providerList.add(provider);
+            }
+        }
+
+        if (providerList.size() == 0) {
+            return null;
+        }
+
+        Comparator<LaunchServiceProvider> longestHistoryComparator = (b, a) -> -BigDecimal.valueOf(a.getYearFounded()).compareTo(BigDecimal.valueOf(b.getYearFounded()));
+        providerList.sort(longestHistoryComparator);
+
+        if (k > providerList.size()) {
+            k = providerList.size();
+        }
+
+        return providerList.subList(0, k);
+    }
+
+    public List<String> countriesWithTheMostProviders(int k){
+        isTrue(k > 0, "k must be greater than 0.");
+        Collection<LaunchServiceProvider> providers = dao.loadAll(LaunchServiceProvider.class);
+        ArrayList<String> countries= new ArrayList<String>();
+        for(LaunchServiceProvider provider: providers){
+            countries.add(provider.getCountry());
+        }
+
+
+        if(countries.size() == 0){
+            return null;
+        }
+
+        Comparator<String> countriesComparator = (a, b) -> -Collections.frequency(countries, a) + Collections.frequency(countries, b);
+        List<String> countriesSorted = countries.stream().sorted(countriesComparator).collect(Collectors.toList());
+        List<String> countryResult = new ArrayList<>();
+
+        for(String country : countriesSorted){
+
+            if (Collections.frequency(countryResult, country) < 1){
+
+                countryResult.add(country);
+            }
+        }
+
+        if(countryResult.size() < k){
+            k = countryResult.size();
+        }
+
+        return countryResult.subList(0,k);
     }
 }

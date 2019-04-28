@@ -191,4 +191,11 @@ public class User extends Entity {
         }
 
     }
+
+    public void changePassword(String oldPassword, String newPassword) {
+        isTrue(password.equals(oldPassword), "old password doesn't match");
+        isTrue(!password.equals(newPassword), "new password shouldn't be the same as old password");
+        setPassword(newPassword);
+    }
+
 }

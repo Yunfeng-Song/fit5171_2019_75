@@ -1,6 +1,7 @@
 package rockets.mining;
 
 import com.google.common.collect.Lists;
+import org.apache.logging.log4j.core.tools.picocli.CommandLine;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -572,17 +573,17 @@ public class RocketMinerUnitTest {
             "10, 2017",
             "1, 2019"
     })
-    public void shouldReturnHighestRevenueLSP(int k, int year){
+    public void shouldReturnHighestRevenueLSP(int k, int year) {
 
         when(dao.loadAll(Launch.class)).thenReturn(launches);
         List<LaunchServiceProvider> lspResult = miner.highestRevenueLaunchServiceProviders(k, year);
 
-        verify(dao,times(1)).loadAll(Launch.class);
+        verify(dao, times(1)).loadAll(Launch.class);
         //assertNotNull(lspResult);
 
-        if(lspResult != null){
+        if (lspResult != null) {
 
-            if(lspResult.size() < k){
+            if (lspResult.size() < k) {
                 k = lspResult.size();
             }
             assertEquals(k, lspResult.size());
@@ -590,22 +591,22 @@ public class RocketMinerUnitTest {
 
         List<LaunchServiceProvider> lspActual = new ArrayList<>();
 
-        switch (year){
+        switch (year) {
             case 2017: {
 
-                switch (k){
-                    case 1:{
+                switch (k) {
+                    case 1: {
                         lspActual.add(lsps.get(2));
                         assertEquals(lspResult, lspActual);
                         break;
                     }
-                    case 2:{
+                    case 2: {
                         lspActual.add(lsps.get(2));
                         lspActual.add(lsps.get(0));
                         assertEquals(lspResult, lspActual);
                         break;
                     }
-                    default:{
+                    default: {
                         lspActual.add(lsps.get(2));
                         lspActual.add(lsps.get(0));
                         lspActual.add(lsps.get(1));
@@ -617,8 +618,108 @@ public class RocketMinerUnitTest {
                 break;
 
             }
-            default: assertEquals(lspResult, null); break;
+            default:
+                assertEquals(lspResult, null);
+                break;
 
         }
+    }
+
+    @DisplayName("should not throw exception when using providersWithLongestHistory function")
+    @ParameterizedTest
+    @ValueSource(ints={1,2,3,10})
+    public void shouldNotThrowExceptionWhenUsingProvidersWithLongestHistoryMethod(int k){
+        when(dao.loadAll(LaunchServiceProvider.class)).thenReturn(lsps);
+
+        assertDoesNotThrow(()-> {
+            miner.countriesWithTheMostProviders(k);
+        });
+        verify(dao,times(1)).loadAll(LaunchServiceProvider.class);
+    }
+
+    @DisplayName("should return the list when using providersWithLongestHistory function")
+    @ParameterizedTest
+    @ValueSource(ints = {1, 2, 3, 10})
+    public void shouldReturnTheListWhenUsingProvidersWithLongestHistory(int k){
+
+        when(dao.loadAll(LaunchServiceProvider.class)).thenReturn(lsps);
+        List<LaunchServiceProvider> providerResult = miner.providersWithLongestHistory(k);
+
+        verify(dao,times(1)).loadAll(LaunchServiceProvider.class);
+
+        switch(k){
+            case 1: assertEquals(k, providerResult.size()); break;
+            case 2: assertEquals(k, providerResult.size()); break;
+            default: assertEquals(3, providerResult.size()); break;
+        }
+
+        List<LaunchServiceProvider> lspsList = new ArrayList<>();
+        switch (k){
+            case 1:
+                lspsList.add(lsps.get(2));
+                assertEquals(providerResult, lspsList); break;
+            case 2:
+                lspsList.add(lsps.get(2)); lspsList.add(lsps.get(0));
+                assertEquals(providerResult, lspsList); break;
+            default:
+                lspsList.add(lsps.get(2)); lspsList.add(lsps.get(0)); lspsList.add(lsps.get(1));
+                assertEquals(providerResult, lspsList); break;
+        }
+    }
+
+    @DisplayName("should throw exception when inputting an invalid k(k<= 0) on providersWithLongestHistory history.")
+    @ParameterizedTest
+    @ValueSource(ints={0, -1, -2})
+    public void shouldThrowExceptionWhenUsingProvidersWithLongestHistoryMethod(int k){
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> miner.providersWithLongestHistory(k));
+        assertEquals("k must be greater than 0", exception.getMessage());
+    }
+
+//////////////////////
+
+    @DisplayName("should not throw exception when using countriesWithMostProvider function")
+    @ParameterizedTest
+    @ValueSource(ints={1,2,3,10})
+    public void shouldNotThrowExceptionWhenUsingCountriesWithMostProvidersFunction(int k){
+        when(dao.loadAll(LaunchServiceProvider.class)).thenReturn(lsps);
+
+        assertDoesNotThrow(()-> {
+            miner.countriesWithTheMostProviders(k);
+        });
+        verify(dao,times(1)).loadAll(LaunchServiceProvider.class);
+    }
+
+    @DisplayName("should return the list when using countriesWithMostProviders function")
+    @ParameterizedTest
+    @ValueSource(ints = {1, 2, 3, 10})
+    public void shouldReturnTheListWhenUsingCountriesWithMostProvidersFunction(int k){
+
+        when(dao.loadAll(LaunchServiceProvider.class)).thenReturn(lsps);
+        List<String> countryResult = miner.countriesWithTheMostProviders(k);
+
+        verify(dao,times(1)).loadAll(LaunchServiceProvider.class);
+
+        switch(k){
+            case 1: assertEquals(k, countryResult.size()); break;
+            default : assertEquals(2, countryResult.size()); break;
+        }
+
+        List<String> countryList = new ArrayList<>();
+        switch (k){
+            case 1:
+                countryList.add("USA");
+                assertEquals(countryList, countryResult); break;
+            default:
+                countryList.add("USA"); countryList.add("Europe");
+                assertEquals(countryList, countryResult); break;
+        }
+    }
+
+    @DisplayName("should throw exception when inputting an invalid k(k<= 0) on providersWithLongestHistory history.")
+    @ParameterizedTest
+    @ValueSource(ints={0, -1, -2})
+    public void shouldThrowExceptionWhenUsingCountiesWithMostProvidersMethod(int k){
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> miner.countriesWithTheMostProviders(k));
+        assertEquals("k must be greater than 0.", exception.getMessage());
     }
 }

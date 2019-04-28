@@ -321,4 +321,19 @@ public class UserUnitTest {
         assertFalse(target.equals(anotherUser));
     }
 
+    @DisplayName("should return false when user enters old password that doesn't match")
+    @Test
+    public void shouldThrowExceptionWhenPasswordDoesntMatch(){
+        target.setPassword("123qweQWE");
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> target.changePassword("321ewqEWQ","333eeeEEE"));
+        assertEquals("old password doesn't match", exception.getMessage());
+    }
+
+    @DisplayName("should throw exception when user enters old password that doesn't match")
+    @Test
+    public void shouldThrowExceptionWhenNewPasswordEqualsCurrentPassword(){
+        target.setPassword("123qweQWE");
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> target.changePassword("123qweQWE","123qweQWE"));
+        assertEquals("new password shouldn't be the same as old password", exception.getMessage());
+    }
 }
